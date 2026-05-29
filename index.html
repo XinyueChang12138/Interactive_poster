@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disaster Hierarchy Treemap</title>
+  <link rel="stylesheet" href="style.css?v=7" />
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <div class="eyebrow">Interactive Poster Extension</div>
+      <h1>A Shared Planet,<br>A Shared Risk</h1>
+      <p>Explore the disaster dataset through a clickable hierarchy: disaster subgroup, type, subtype, location, and recorded time.</p>
+      <button id="startBtn" class="primary-btn">Explore the hierarchy ↓</button>
+    </section>
+
+    <section id="explorer" class="explorer">
+      <aside class="panel side-panel">
+        <div class="label">Current view</div>
+        <h2 id="viewTitle">Disaster Subgroups</h2>
+        <p id="viewText">Each rectangle represents the number of recorded disaster events in the dataset.</p>
+
+        <div id="breadcrumbs" class="breadcrumbs"></div>
+
+        <div class="controls">
+          <button id="backBtn">← Back</button>
+          <button id="resetBtn">Reset</button>
+        </div>
+
+        <div class="stats">
+          <div class="stat-card stat-events"><i>〽</i><div><strong id="totalEvents">0</strong><span>Total events</span></div></div>
+          <div class="stat-card stat-countries"><i>◎</i><div><strong id="totalCountries">0</strong><span>Countries</span></div></div>
+          <div class="stat-card stat-years"><i>▣</i><div><strong id="yearRange">—</strong><span>Years</span></div></div>
+        </div>
+
+        <div class="hint">
+          Click a block to drill down.<br>
+          Hover to see details.<br>
+          The final level shows where and when events happened.
+        </div>
+      </aside>
+
+      <section class="viz-wrap panel">
+        <div class="zoom-bar">
+          <span>Treemap size</span>
+          <button id="zoomOutBtn" type="button">− Smaller</button>
+          <button id="zoomFitBtn" type="button">Fit view</button>
+          <button id="zoomInBtn" type="button">+ Larger</button>
+        </div>
+        <div id="treemap" class="treemap" aria-label="Interactive disaster treemap"></div>
+      </section>
+
+      <aside class="panel detail">
+        <div class="label">Selected information</div>
+        <h3 id="detailTitle">Click a rectangle</h3>
+        <div id="detailContent">The details of the selected category or location will appear here.</div>
+      </aside>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="script.js?v=7"></script>
+</body>
+</html>
